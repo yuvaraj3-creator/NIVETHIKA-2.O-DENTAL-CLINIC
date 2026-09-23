@@ -37,3 +37,155 @@ h1{font-family:Cinzel,serif;font-size:48px;line-height:1.08;max-width:760px;colo
 
 /* REVIEWS */
 .reviewIntro{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}.reviewIntro h2,.reviewBuilder h2{margin-bottom:10px}.reviewGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.reviewCard{padding:26px;border:1px solid #dfd5bd;border-radius:22px;background:#fffdf7;box-shadow:0 12px 30px #17324d0a}.reviewCard .stars{color:#b88a32;letter-spacing:2px;font-size:18px;margin-bottom:16px}.reviewCard p{font-family:Cinzel,serif;color:#073f3d;font-size:18px;line-height:1.55;min-height:84px}.reviewCard strong{display:block;color:#073f3d;margin-top:18px}.reviewCard small{display:block;color:#60758a;margin-top:6px}.reviewSource{margin-top:24px;padding:22px;border:1px solid #dfd5bd;border-radius:20px;background:#f5efdf}.sourceLinks{display:flex;gap:10px;flex-wrap:wrap}.reviewBuilder{max-width:1050px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}.reviewForm{display:grid;gap:12px}.reviewForm input,.reviewForm textarea,.reviewForm select{width:100%;padding:15px;border:1px solid #cdbd9c;border-radius:14px;background:#fffdf7;font:inherit}.reviewForm textarea{min-height:140px;resize:vertical}.reviewForm small{color:#60758a;line-height:1.5}@media(max-width:1000px){.reviewGrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:850px){.reviewIntro,.reviewBuilder{grid-template-columns:1fr;display:grid}.reviewGrid{grid-template-columns:1fr}.reviewCard p{min-height:auto}.sourceLinks{flex-direction:column}.sourceLinks .btn{width:100%;text-align:center}}
+
+/* MOBILE SIDE MENU */
+.mobileMenuToggle{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.mobileMenuButton,.mobileMenu,.mobileMenuOverlay{display:none}
+
+@media(max-width:850px){
+  .navin{padding:10px 16px;min-height:72px}
+  .mobile{display:none!important}
+  .mobileMenuButton{
+    display:flex;
+    width:48px;
+    height:48px;
+    flex:0 0 48px;
+    margin-left:auto;
+    border-radius:10px;
+    background:#073f3d;
+    border:1px solid #073f3d;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:5px;
+    cursor:pointer;
+    box-shadow:0 6px 18px #073f3d2b;
+    position:relative;
+    z-index:1002;
+  }
+  .mobileMenuButton span{
+    display:block;
+    width:25px;
+    height:3px;
+    border-radius:2px;
+    background:#fff;
+  }
+  .mobileMenu{
+    display:block;
+    position:fixed;
+    top:0;
+    right:0;
+    width:min(88vw,360px);
+    height:100dvh;
+    padding:24px 20px 28px;
+    background:#fbf7ea;
+    border-left:1px solid #dfd5bd;
+    box-shadow:-18px 0 45px #073f3d2b;
+    transform:translateX(105%);
+    transition:transform .28s ease;
+    z-index:1001;
+    overflow-y:auto;
+  }
+  .mobileMenuTop{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    padding:6px 2px 22px;
+    border-bottom:1px solid #dfd5bd;
+  }
+  .mobileMenuTop strong{
+    display:block;
+    font-family:Cinzel,serif;
+    font-size:21px;
+    letter-spacing:1px;
+    color:#073f3d;
+  }
+  .mobileMenuTop small{
+    display:block;
+    margin-top:3px;
+    font-family:Cinzel,serif;
+    font-size:9px;
+    letter-spacing:3px;
+    color:#b88a32;
+  }
+  .mobileMenuClose{
+    width:42px;
+    height:42px;
+    border:1px solid #cdbd9c;
+    border-radius:10px;
+    display:grid;
+    place-items:center;
+    font-size:30px;
+    line-height:1;
+    color:#073f3d;
+    cursor:pointer;
+  }
+  .mobileMenuLinks{
+    display:grid;
+    gap:9px;
+    padding:22px 0 18px;
+  }
+  .mobileMenuLinks a{
+    display:flex;
+    align-items:center;
+    min-height:52px;
+    padding:14px 16px;
+    border:1px solid #dfd5bd;
+    border-radius:12px;
+    background:#fffdf7;
+    color:#073f3d;
+    font-size:15px;
+    font-weight:800;
+    transition:background .2s ease,transform .2s ease,border-color .2s ease;
+  }
+  .mobileMenuLinks a:active{
+    background:#eee5d1;
+    border-color:#b88a32;
+    transform:scale(.98);
+  }
+  .mobileMenuAppointment{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:52px;
+    padding:14px 16px;
+    border-radius:12px;
+    background:#073f3d;
+    color:#fff;
+    font-weight:800;
+    text-align:center;
+    box-shadow:0 8px 20px #073f3d2b;
+  }
+  .mobileMenuPhone{
+    display:block;
+    margin-top:10px;
+    padding:13px 14px;
+    border:1px solid #cdbd9c;
+    border-radius:12px;
+    color:#073f3d;
+    font-weight:800;
+    text-align:center;
+    background:#fffdf7;
+  }
+  .mobileMenuOverlay{
+    position:fixed;
+    inset:0;
+    display:block;
+    background:#073f3d80;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .25s ease,visibility .25s ease;
+    z-index:1000;
+  }
+  .mobileMenuToggle:checked ~ .mobileMenu{
+    transform:translateX(0);
+  }
+  .mobileMenuToggle:checked ~ .mobileMenuOverlay{
+    opacity:1;
+    visibility:visible;
+  }
+  body:has(.mobileMenuToggle:checked){
+    overflow:hidden;
+  }
+}
