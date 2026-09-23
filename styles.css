@@ -15,3 +15,12 @@ h1{font-family:Cinzel,serif;font-size:48px;line-height:1.08;max-width:760px;colo
 .heroBottom{display:grid;grid-template-columns:1fr .8fr 1.7fr;max-width:1050px;background:#073f3d;color:#fff;border-radius:0 0 8px 8px}.heroBottom>div{padding:14px 18px;border-right:1px solid #b89a5b}.heroBottom>div:last-child{border-right:0}.heroBottom strong{background:transparent;color:#e3c36d;padding:0}.heroBottom p{font-size:12px;line-height:1.55;margin:6px 0;font-weight:600}
 .section h2{font-family:Cinzel,serif;color:#073f3d}.card{border-color:#dfd5bd;background:#fffdf7}.icon{background:#eee2c6;color:#b88a32}.card h3{font-family:Cinzel,serif;color:#073f3d}.outline{background:#fffdf6;color:#073f3d;border-color:#cdbd9c}.section.alt{background:#f2ecdc}.feature{background:#fffdf7;border-color:#dfd5bd}.footer{background:#073f3d}
 @media(max-width:850px){.hero{min-height:820px;background:linear-gradient(180deg,#fbf7eaf7 0%,#fbf7eae8 47%,#fbf7ea55 70%,#ffffff00 100%),url('https://images.pexels.com/photos/4269489/pexels-photo-4269489.jpeg?auto=compress&cs=tinysrgb&w=2000') center bottom/auto 48% no-repeat}.heroInfo,.heroBottom{grid-template-columns:1fr}.heroInfo>div,.heroBottom>div{border-right:0;border-bottom:1px solid #d8cdb5}.heroBottom>div:last-child{border-bottom:0}.doctor{font-size:25px}.brandText strong{font-size:18px}.brandIcon{font-size:32px}}
+/* HOME HERO — two dental treatment images side by side */
+.hero{background:#fbf7ea;position:relative}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fbf7eaff 0%,#fbf7eaf5 34%,#fbf7eab8 49%,#fbf7ea33 66%,transparent 82%);pointer-events:none;z-index:1}
+.heroVisual{position:absolute;right:0;top:0;width:52%;height:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;z-index:0}
+.heroVisualImg{background-position:center;background-size:cover;background-repeat:no-repeat;min-width:0}
+.heroVisualImgOne{background-image:url('https://images.pexels.com/photos/4269489/pexels-photo-4269489.jpeg?auto=compress&cs=tinysrgb&w=1400')}
+.heroVisualImgTwo{background-image:url('https://images.pexels.com/photos/4269943/pexels-photo-4269943.jpeg?auto=compress&cs=tinysrgb&w=1400')}
+.hero .inner{z-index:2}
+@media(max-width:850px){.hero{min-height:900px}.hero:before{background:linear-gradient(180deg,#fbf7eaff 0%,#fbf7eae8 47%,#fbf7ea55 66%,transparent 100%)}.heroVisual{top:auto;bottom:0;width:100%;height:46%;grid-template-columns:1fr 1fr;gap:6px}.heroVisualImgOne,.heroVisualImgTwo{background-position:center}.hero .inner{padding-bottom:430px}}
